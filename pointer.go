@@ -13,4 +13,8 @@ func main() {
 	fmt.Println(ip)
 	fmt.Println(&x)
 	fmt.Println(y)
+
+	ptr := new(int)
+	*ptr = 3
+	fmt.Println(*ptr)
 }
