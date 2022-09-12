@@ -2,16 +2,20 @@ package main
 
 import "fmt"
 
-func func1(i int) func() int {
-
-	fmt.Println(i)
+func intSeq() func() int {
+	i := 0
 	return func() int {
-		fmt.Println("inner func")
-		return 2
+		fmt.Println("inside func")
+		i++
+		return i
 	}
 }
 
 func main() {
-	a := func1(2)
-	a()
+	a := intSeq()
+	fmt.Println(a())
+	fmt.Println(a())
+	fmt.Println(a())
+	fmt.Println(a())
+
 }
